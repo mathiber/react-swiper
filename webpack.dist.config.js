@@ -40,6 +40,7 @@ const config = {
     },
     externals: {
         'react': 'react',
+        'prop-types': 'prop-types',
         'react-dom': 'react-dom',
         'react-dom/server': 'react-dom/server'
     }

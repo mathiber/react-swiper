@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ReactDom from 'react-dom';
 import merge from 'merge';
 import ReactDomServer from 'react-dom/server';
@@ -21,10 +22,10 @@ const defaultSwiperConfig = {
 
 const SwiperComponent = React.createClass({
     propTypes: {
-        swiperConfig: React.PropTypes.object,
-        containerClass: React.PropTypes.string,
-        onSwiperMount: React.PropTypes.func,
-        onSwiperUnmount: React.PropTypes.func
+        swiperConfig: PropTypes.object,
+        containerClass: PropTypes.string,
+        onSwiperMount: PropTypes.func,
+        onSwiperUnmount: PropTypes.func
     },
 
     getDefaultProps(){

@@ -39,7 +39,8 @@
     "webpack": "^1.12.11"
   },
   "peerDependencies": {
-    "react": "^0.14.x",
-    "react-dom": "^0.14.x"
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "prop-types": "^15.6.0"
   }
 }
