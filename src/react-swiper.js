@@ -20,20 +20,14 @@ const defaultSwiperConfig = {
     buttonDisabledClass: 'swiper-button-disabled'
 };
 
-const SwiperComponent = React.createClass({
-    propTypes: {
-        swiperConfig: PropTypes.object,
-        containerClass: PropTypes.string,
-        onSwiperMount: PropTypes.func,
-        onSwiperUnmount: PropTypes.func
-    },
+class SwiperComponent extends React {
 
     getDefaultProps(){
         return {
             swiperConfig: defaultSwiperConfig,
             containerClass: 'swiper-container'
         };
-    },
+    }
 
     componentDidMount(){
         var config = this.props.swiperConfig;
@@ -47,7 +41,7 @@ const SwiperComponent = React.createClass({
         if(this.props.onSwiperMount){
             this.props.onSwiperMount(this.swiper);
         }
-    },
+    }
 
     componentWillUnmount(){
         if(this.swiper){
@@ -57,13 +51,13 @@ const SwiperComponent = React.createClass({
         if(this.props.onSwiperUnmount){
             this.props.onSwiperUnmount(this.swiper);
         }
-    },
+    }
 
     formatChildren(children, config) {
         return React.Children.map(children, (child, index) => {
             return <div className={ config.slideClass } key={ index }>{ child }</div>
         });
-    },
+    }
 
     createSwiper(){
         var config = merge(defaultSwiperConfig, this.props.swiperConfig);
@@ -90,13 +84,20 @@ const SwiperComponent = React.createClass({
         container.innerHTML = ReactDomServer.renderToStaticMarkup(content);
 
         return new Swiper(container.children[0], config);
-    },
+    }
 
     render() {
         return (
             <div ref="swiperContainer" className="react-swiper-component"></div>
         )
     }
-});
+}
+
+SwiperComponent.propTypes = {
+    swiperConfig: PropTypes.object,
+    containerClass: PropTypes.string,
+    onSwiperMount: PropTypes.func,
+    onSwiperUnmount: PropTypes.func
+};
 
 export default SwiperComponent;
