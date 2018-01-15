@@ -20,7 +20,7 @@ const defaultSwiperConfig = {
     buttonDisabledClass: 'swiper-button-disabled'
 };
 
-class SwiperComponent extends React {
+class SwiperComponent extends React.Component {
 
     getDefaultProps(){
         return {
