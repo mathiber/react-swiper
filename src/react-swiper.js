@@ -22,13 +22,6 @@ const defaultSwiperConfig = {
 
 class SwiperComponent extends React.Component {
 
-    getDefaultProps(){
-        return {
-            swiperConfig: defaultSwiperConfig,
-            containerClass: 'swiper-container'
-        };
-    }
-
     componentDidMount(){
         var config = this.props.swiperConfig;
 
@@ -98,6 +91,11 @@ SwiperComponent.propTypes = {
     containerClass: PropTypes.string,
     onSwiperMount: PropTypes.func,
     onSwiperUnmount: PropTypes.func
+};
+
+SwiperComponent.defaultProps = {
+    swiperConfig: defaultSwiperConfig,
+    containerClass: 'swiper-container'
 };
 
 export default SwiperComponent;
